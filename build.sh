@@ -44,7 +44,7 @@ DEIVCE_OUTPUT_DIR=${OUTPUT_DIR}/${DEVICE_BUILD}
 BUILDDATE=$(date +%s)
 
 if [[ ! -z ${GITHUB_REF##*/} ]]; then
-	FILE_OUTPUT=FRSH_CORE_${DEVICE_BUILD}_${GITHUB_REF##*/}_${BUILDDATE}.zip
+	FILE_OUTPUT=Twilight_${DEVICE_BUILD}_${GITHUB_REF##*/}_${BUILDDATE}.zip
 	if [[ ${GITHUB_REF##*/} == "staging" ]]; then
 		LOCALVERSION='-Twilight'
 		export LOCALVERSION='-Twilight'
@@ -277,13 +277,7 @@ build_kernel_full() {
 
 script_echo ''
 script_echo '====================================================='
-script_echo '         _____          _ _ _       _     _          '
-script_echo '        |_   _|_      _(_) (_) __ _| |__ | |_        '
-script_echo '          | | \ \ /\ / / | | |/ _` | '_ \| __|       '
-script_echo '          | |  \ V  V /| | | | (_| | | | | |_        '
-script_echo '          |_|   \_/\_/ |_|_|_|\__, |_| |_|\__|       '
-script_echo '                              |___/                  '
-script_echo '                                                     '
+script_echo '          | Twilight Kernel For M30S |               '
 script_echo '      "Experience the seamless fusion of power       '
 script_echo ' and efficiency with the Twilight Kernel for M30S."  '
 script_echo '           by- Sundram | @Nerd_sundram               '

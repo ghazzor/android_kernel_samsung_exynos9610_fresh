@@ -46,7 +46,8 @@ jobs:
     - name: Prepare Release
       run: |
           mkdir -p ./release
-          mv -f `find ./ -iname FRSH_CORE_*.zip` ./release/
+          mv -f `find ./ -iname Twilight_*.zip` ./release/
+          cp -f `find ./ -iname Twilight_*.zip` ./
           cp .config ./release/kernel_config_m30s.txt
 
     - name: Upload image artifact
@@ -69,4 +70,12 @@ jobs:
         name: m30s_release_staging-${{ github.run_number }})
         path: 'release'
         if-no-files-found: error
+
+    - name: Upload to Telegram
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        document: Twilight_*.zip
+        message: "Twilight Kernel for M30s!"
 
