@@ -34,7 +34,6 @@ TOOLCHAIN_EXT=$(pwd)/toolchain
 
 TOOLCHAIN_ARM32=$HOME/toolchain_arm32/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi
 TOOLCHAIN_EXT_ARM32=$(pwd)/toolchain_arm32/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi
-
 DEVICE_BUILD=`echo $1 | tr 'A-Z' 'a-z'`
 ORIG_DIR=$(pwd)
 OPTIONS=`echo ${2} ${3} ${4} ${5} ${6} ${7} ${8} | tr 'A-Z' 'a-z'`
@@ -77,6 +76,7 @@ download_toolchain32() {
 	cd ${TOOLCHAIN_EXT_ARM32}
 	wget https://developer.arm.com/-/media/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz --output-document=${TOOLCHAIN_EXT_ARM32}/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz
 	tar -xvf ${TOOLCHAIN_EXT_ARM32}/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz
+	mv ${TOOLCHAIN_EXT_ARM32}/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi/* ${TOOLCHAIN_EXT_ARM32}
 	verify_toolchain
 }
 
