@@ -134,12 +134,6 @@ verify_toolchain() {
 	fi
 }
 
-update_magisk() {
-	script_echo " "
-	script_echo "I: Updating Magisk..."
-	$(pwd)/usr/magisk/update_magisk.sh 2>&1 | sed 's/^/     /'
-}
-
 show_usage() {
 	script_echo "USAGE: ./build.sh (device) [dirty]"
 	script_echo " "
@@ -304,13 +298,11 @@ if [[ ! -z ${1} ]]; then
 		script_echo "I: CI build!"
 		make clean 2>&1 | sed 's/^/     /'
 		make mrproper 2>&1 | sed 's/^/     /'
-		update_magisk
 	else
 		script_echo " "
 		script_echo "I: Clean build!"
 		make clean 2>&1 | sed 's/^/     /'
 		make mrproper 2>&1 | sed 's/^/     /'
-		update_magisk
 	fi
 
 	build_kernel_full
