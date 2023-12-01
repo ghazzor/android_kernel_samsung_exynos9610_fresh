@@ -46,16 +46,16 @@ BUILDDATE=$(date +%s)
 if [[ ! -z ${GITHUB_REF##*/} ]]; then
 	FILE_OUTPUT=FRSH_CORE_${DEVICE_BUILD}_${GITHUB_REF##*/}_${BUILDDATE}.zip
 	if [[ ${GITHUB_REF##*/} == "staging" ]]; then
-		LOCALVERSION=' - Fresh Core'
-		export LOCALVERSION=' - Fresh Core'
+		LOCALVERSION='-Twilight'
+		export LOCALVERSION='-Twilight'
 	else
-		LOCALVERSION=" - Fresh Core-${GITHUB_REF##*/}"
-		export LOCALVERSION=" - Fresh Core-${GITHUB_REF##*/}"
+		LOCALVERSION="-Twilight-${GITHUB_REF##*/}"
+		export LOCALVERSION="-Twilight-${GITHUB_REF##*/}"
 	fi
 else
 	FILE_OUTPUT=FRSH_CORE_${DEVICE_BUILD}_user_${BUILDDATE}.zip
-	LOCALVERSION="-user"
-	export LOCALVERSION="-user"
+	LOCALVERSION="-Twilight"
+	export LOCALVERSION="-Twilight"
 fi
 
 script_echo() {
@@ -275,15 +275,18 @@ build_kernel_full() {
 	sleep 7
 }
 
-
 script_echo ''
 script_echo '====================================================='
-script_echo '             ArKernel Builder - Fresh Core           '
-script_echo '          by TenSeventy7 - Licensed in GPLv3         '
+script_echo '         _____          _ _ _       _     _          '
+script_echo '        |_   _|_      _(_) (_) __ _| |__ | |_        '
+script_echo '          | | \ \ /\ / / | | |/ _` | '_ \| __|       '
+script_echo '          | |  \ V  V /| | | | (_| | | | | |_        '
+script_echo '          |_|   \_/\_/ |_|_|_|\__, |_| |_|\__|       '
+script_echo '                              |___/                  '
 script_echo '                                                     '
-script_echo '           Originally built for Galahad Kernel       '
-script_echo '        Updated Aug 10 2020 for Project ShadowX      '
-script_echo '       Updated Apr 10 2021 for The Fresh Project     '
+script_echo '      "Experience the seamless fusion of power       '
+script_echo ' and efficiency with the Twilight Kernel for M30S."  '
+script_echo '           by- Sundram | @Nerd_sundram               '
 script_echo '====================================================='
 script_echo ''
 
