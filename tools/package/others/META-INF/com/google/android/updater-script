@@ -6,15 +6,12 @@ package_extract_file("system.prop", "/tmp/system.prop");
 package_extract_file("files-list.txt", "/tmp/files-list.txt");
 
 ui_print("=========================================");
-ui_print("         _____              _            ");
-ui_print("        |  ___| __ ___  ___| |__         ");
-ui_print("        | |_ | '__/ _ \/ __| '_ \        ");
-ui_print("        |  _|| | |  __/\__ \ | | |       ");
-ui_print("        |_|  |_|  \___||___/_| |_|       ");
+ui_print("      | Twilight Kernel For M30S |       ");
+ui_print(" Experience the seamless fusion of power ");
+ui_print(" and efficiency with the Twilight Kernel!");
+ui_print("       by- Sundram | @Nerd_sundram       ");
 ui_print("                                         ");
-ui_print("=========================================");
-ui_print("                Fresh Core               ");
-ui_print(file_getprop("/tmp/addon.prop", "fresh.addon.build"));
+ui_print("  thanks @TenSeventy7 for base kernel    ");
 ui_print("=========================================");
 
 # Determine where are our partitions.
